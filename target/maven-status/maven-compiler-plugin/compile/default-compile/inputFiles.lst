@@ -1,0 +1,9 @@
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/exception/GlobalExceptionHandler.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/JpademoApplication.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/service/StudentService.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/entity/Student.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/entity/Course.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/controller/StudentController.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/repository/StudentRepository.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/exception/StudentException.java
+/Users/Destroy/Desktop/ProdOperMngmnt/A2/webtest/src/main/java/ada/edu/demo/webtest/repository/CourseRepository.java
