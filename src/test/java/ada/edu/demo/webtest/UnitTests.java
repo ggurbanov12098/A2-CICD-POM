@@ -7,18 +7,21 @@ import org.junit.jupiter.api.Test;
 // import org.openqa.selenium.By;
 // import org.openqa.selenium.WebDriver;
 // import org.openqa.selenium.WebElement;
-import org.springframework.beans.factory.annotation.Autowired;
+// import org.springframework.beans.factory.annotation.Autowired;
 // import org.springframework.boot.test.context.SpringBootTest;
 
+// import static org.junit.jupiter.api.Assertions.assertEquals;
+// import static org.junit.jupiter.api.Assertions.assertNotNull;
+// import static org.mockito.Mockito.when;
+
 import java.util.ArrayList;
+// import java.util.Arrays;
+// import java.util.Date;
 import java.util.List;
 
 // import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 class UnitTests {
-
-	@Autowired
-	// private WebDriver webDriver;
 
 	@Test
 	@DisplayName("The number of courses shall correspond to the added courses")
@@ -37,6 +40,7 @@ class UnitTests {
 
 		assert (courseCnt == s.getCourses().size());
 	}
+
 	@Test
 	@DisplayName("The total credits shall correspond to the sum of the added credits")
 	void testCreditCalculation() {
@@ -60,4 +64,5 @@ class UnitTests {
 		assert (totalCredits == testCreds);
 	}
 
+	// 
 }

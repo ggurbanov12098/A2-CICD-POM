@@ -4,7 +4,6 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-// import org.openqa.selenium.chrome.ChromeDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
@@ -44,13 +43,13 @@ class WebInterfaceTests {
 		assertNotNull(firstNameInput);
 
 		try {
-			studentIdInput.sendKeys("1");
+			studentIdInput.sendKeys("12098");
 			Thread.sleep(2000);
-			firstNameInput.sendKeys("Nigar");
+			firstNameInput.sendKeys("Gabil");
 			Thread.sleep(2000);
-			lastNameInput.sendKeys("Salayeva");
+			lastNameInput.sendKeys("Gurbanov");
 			Thread.sleep(2000);
-			emailInput.sendKeys("ns@ada.edu.az");
+			emailInput.sendKeys("ggurbanov12098@ada.edu.az");
 			Thread.sleep(2000);
 		}
 		catch (Exception ex) {
@@ -68,8 +67,8 @@ class WebInterfaceTests {
 	public void CheckUser() {
 		// Check if the student is added
 		webDriver.get("http://localhost:"+port+"/student/list");
-		List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Nigar')]"));
-		List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Salayeva')]"));
+		List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gabil')]"));
+		List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gurbanov')]"));
 		System.out.println("Element result"+bodyElementLName);
 
 		try {
