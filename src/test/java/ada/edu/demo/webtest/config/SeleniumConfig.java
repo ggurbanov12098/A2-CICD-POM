@@ -8,7 +8,6 @@ import org.openqa.selenium.chrome.ChromeOptions;
 // import org.openqa.selenium.firefox.FirefoxOptions;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-// import org.springframework.stereotype.Component;
 
 @Configuration
 public class SeleniumConfig {
@@ -31,7 +30,5 @@ public class SeleniumConfig {
         
         WebDriverManager.chromedriver().setup();
         return new ChromeDriver(options);
-        // return new FirefoxDriver();
-
     }
 }

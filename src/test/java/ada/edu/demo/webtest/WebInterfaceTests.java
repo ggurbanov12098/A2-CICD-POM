@@ -19,6 +19,12 @@ class WebInterfaceTests {
 	@Autowired
 	private WebDriver webDriver;
 
+	// @BeforeAll // Or @BeforeEach if you need this before each test
+    // public void setupWebDriver() {
+    //     System.setProperty("webdriver.chrome.driver", "/Applications/Google Chrome.app"); // Replace with the actual path to chromedriver
+    //     webDriver = new ChromeDriver();
+    // }
+
 	@LocalServerPort
 	private int port;
 
@@ -37,13 +43,13 @@ class WebInterfaceTests {
 		assertNotNull(firstNameInput);
 
 		try {
-			studentIdInput.sendKeys("1");
+			studentIdInput.sendKeys("12098");
 			Thread.sleep(2000);
-			firstNameInput.sendKeys("Nigar");
+			firstNameInput.sendKeys("Gabil");
 			Thread.sleep(2000);
-			lastNameInput.sendKeys("Salayeva");
+			lastNameInput.sendKeys("Gurbanov");
 			Thread.sleep(2000);
-			emailInput.sendKeys("ns@ada.edu.az");
+			emailInput.sendKeys("ggurbanov12098@ada.edu.az");
 			Thread.sleep(2000);
 		}
 		catch (Exception ex) {
@@ -61,8 +67,8 @@ class WebInterfaceTests {
 	public void CheckUser() {
 		// Check if the student is added
 		webDriver.get("http://localhost:"+port+"/student/list");
-		List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Nigar')]"));
-		List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Salayeva')]"));
+		List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gabil')]"));
+		List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gurbanov')]"));
 		System.out.println("Element result"+bodyElementLName);
 
 		try {
