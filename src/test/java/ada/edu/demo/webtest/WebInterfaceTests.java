@@ -4,12 +4,15 @@ import org.junit.jupiter.api.*;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+// import org.openqa.selenium.support.ui.ExpectedConditions;
+// import org.openqa.selenium.support.ui.WebDriverWait;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
 
 import java.util.List;
 
+// import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -18,12 +21,6 @@ class WebInterfaceTests {
 
 	@Autowired
 	private WebDriver webDriver;
-
-	// @BeforeAll // Or @BeforeEach if you need this before each test
-    // public void setupWebDriver() {
-    //     System.setProperty("webdriver.chrome.driver", "/Applications/Google Chrome.app"); // Replace with the actual path to chromedriver
-    //     webDriver = new ChromeDriver();
-    // }
 
 	@LocalServerPort
 	private int port;
@@ -44,13 +41,13 @@ class WebInterfaceTests {
 
 		try {
 			studentIdInput.sendKeys("12098");
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			firstNameInput.sendKeys("Gabil");
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			lastNameInput.sendKeys("Gurbanov");
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 			emailInput.sendKeys("ggurbanov12098@ada.edu.az");
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		}
 		catch (Exception ex) {
 			System.out.println(ex);
