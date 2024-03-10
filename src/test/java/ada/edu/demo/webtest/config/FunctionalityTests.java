@@ -140,5 +140,19 @@ public class FunctionalityTests {
     }
 
 
+    @Test
+    public void testGetStudentById_WhenStudentExists() {
+        Student student = new Student(1, "John", "Doe", "john@example.com", null, null, null);
+        Optional<Student> optionalStudent = Optional.of(student);
+
+        when(studentRepository.findById(1)).thenReturn(optionalStudent);
+
+        Student result = studentService.getStudentById(1);
+
+        assertTrue(optionalStudent.isPresent());
+        assertEquals(student, result);
+    }
+
+
 }
 
