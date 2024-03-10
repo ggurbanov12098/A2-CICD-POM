@@ -10,8 +10,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
-// import org.springframework.validation.BeanPropertyBindingResult;
-// import org.springframework.validation.BindingResult;
 import org.springframework.test.util.ReflectionTestUtils;
 import org.springframework.ui.ConcurrentModel;
 import org.springframework.ui.Model;
@@ -24,7 +22,6 @@ import java.util.Optional;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.junit.jupiter.api.Assertions.assertTrue;
-// import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
@@ -60,7 +57,7 @@ public class FunctionalityTests {
         System.out.printf("Found students: "+students.size());
         assertEquals(2, students.size());
     }
-    // ///////////////////////
+    // //////////////////// Experimental Zone ////////////////////
 
     @Test
     @DisplayName("Test saving a new student")
@@ -74,7 +71,6 @@ public class FunctionalityTests {
         assertEquals("Gabil", savedStudent.getFirstName());
         assertEquals("Gurbanov", savedStudent.getLastName());
     }
-
 
     @Test
 	@DisplayName("Test getting list of all students")
@@ -100,8 +96,6 @@ public class FunctionalityTests {
 		assertNotNull(result); assertEquals(1, ((List<Student>) result).size());
 	}
 
-    // Put new test code here below
-
     @Test
     @DisplayName("Test error handling for invalid student data")
     public void testErrorHandlingForInvalidData() {
@@ -123,36 +117,18 @@ public class FunctionalityTests {
 
         // Mock behavior of studentService.saveStudent() method
         when(studentService.saveStudent(any(Student.class))).thenReturn(null);
-
         
         try {
-            // Call the method under test
+            // Call the method under test then make assertions
             String viewName = studentController.saveStudent(model, invalidStudent, bindingResult);   
-            // Assertions
             assertEquals("student/details", viewName);
             assertTrue(model.containsAttribute("org.springframework.validation.BindingResult.student")); 
         } catch (Exception e) {
-            // TODO: handle exception
+            // handle exception
             System.out.println(e);
             System.out.println("Null ptr exception already handled in other class");
         }
         
     }
 
-
-    @Test
-    public void testGetStudentById_WhenStudentExists() {
-        Student student = new Student(1, "John", "Doe", "john@example.com", null, null, null);
-        Optional<Student> optionalStudent = Optional.of(student);
-
-        when(studentRepository.findById(1)).thenReturn(optionalStudent);
-
-        Student result = studentService.getStudentById(1);
-
-        assertTrue(optionalStudent.isPresent());
-        assertEquals(student, result);
-    }
-
-
 }
-

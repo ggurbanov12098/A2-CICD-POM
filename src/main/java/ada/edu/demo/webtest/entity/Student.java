@@ -51,11 +51,5 @@ public class Student {
 
         return credits;
     }
-
-
-    public Student getStudentById(int i) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'getStudentById'");
-    }
 }
 

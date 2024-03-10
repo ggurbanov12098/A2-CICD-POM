@@ -12,4 +12,12 @@ public class StudentException extends Exception {
     public String getMessage() {
         return "Entity error ("+errorCode+") : " + super.getMessage();
     }
+
+    public String errorCode() {
+        throw new UnsupportedOperationException("Unimplemented method 'errorCode'");
+    }
+
+    public Integer errorNum() {
+        return errorCode;
+    }
 }
