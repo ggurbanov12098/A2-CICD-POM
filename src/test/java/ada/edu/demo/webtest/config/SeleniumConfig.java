@@ -20,8 +20,8 @@ public class SeleniumConfig {
 
         // Configure Chrome to run in headless mode
         ChromeOptions options = new ChromeOptions();
-        options.addArguments("--headless");
-        options.addArguments("--disable-gpu"); // Sometimes important
+        // options.addArguments("--headless");
+        // options.addArguments("--disable-gpu"); // Sometimes important
 
 
         // WebDriverManager.firefoxdriver().setup();

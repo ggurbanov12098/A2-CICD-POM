@@ -21,7 +21,7 @@ class WebInterfaceTests {
 
 	// @BeforeAll // Or @BeforeEach if you need this before each test
     // public void setupWebDriver() {
-    //     System.setProperty("webdriver.chrome.driver", "/Applications/Google Chrome.app"); // Replace with the actual path to chromedriver
+    //     System.setProperty("webdriver.chrome.driver", "/Applications/Google Chrome.app");	 // Replace with the actual path to chromedriver
     //     webDriver = new ChromeDriver();
     // }
 
@@ -44,13 +44,13 @@ class WebInterfaceTests {
 
 		try {
 			studentIdInput.sendKeys("12098");
-			Thread.sleep(2000);
+			Thread.sleep(500);
 			firstNameInput.sendKeys("Gabil");
-			Thread.sleep(2000);
+			Thread.sleep(500);
 			lastNameInput.sendKeys("Gurbanov");
-			Thread.sleep(2000);
+			Thread.sleep(500);
 			emailInput.sendKeys("ggurbanov12098@ada.edu.az");
-			Thread.sleep(2000);
+			Thread.sleep(500);
 		}
 		catch (Exception ex) {
 			System.out.println(ex);
@@ -72,14 +72,49 @@ class WebInterfaceTests {
 		System.out.println("Element result"+bodyElementLName);
 
 		try {
-			Thread.sleep(2000);
+			Thread.sleep(1000);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
 
-		// Check if the text "Jamal" is present in the page content
+		// Check if the text "Gabil" is present in the page content
 		assert(bodyElementFName.size() == 1);
 		assert(bodyElementLName.size() == 1);
 	}
 
+
+// ///////////////////////// Experimental Zone /////////////////////////
+
+
+	// @Test
+	// @Order(3)
+	// @DisplayName("update User Credentials")
+	// // public void test() {
+	// // 	// Check if the student is added
+	// // 	webDriver.get("http://localhost:"+port+"/student/list");
+	// // 	List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gabil')]"));
+	// // 	List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gurbanov')]"));
+	// // 	System.out.println("Element result"+bodyElementLName);
+	// // 	try {
+	// // 		Thread.sleep(1000);
+	// // 	} catch (InterruptedException e) {
+	// // 		throw new RuntimeException(e);
+	// // 	}
+	// // 	assert(bodyElementFName.size() == 1);
+	// // 	assert(bodyElementLName.size() == 1);
+	// // }
+
+
+
+
+	// public void updateUser(){
+	// 	webDriver.get("http://localhost:"+port+"/student/");
+	// 	// Find and submit the form (assuming there's a submit button with a specific attribute)
+		
+	// 	WebElement inputField = webDriver.findElement(By.name("id"));
+	// 	inputField.sendKeys("12098");
+		
+	// 	WebElement searchButton = webDriver.findElement(By.id("submit"));
+	// 	searchButton.click();
+	// }
 }
