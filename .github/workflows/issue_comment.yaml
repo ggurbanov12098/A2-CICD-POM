@@ -1,0 +1,27 @@
+name: Comment on New Issues
+
+# Trigger the workflow whenever a new issue is opened
+on:
+  issues:
+    types: [opened]
+
+jobs:
+  add-comment:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write  # Permission to create comments
+
+    steps:
+      - name: Add comment to issue
+        uses: actions/github-script@v6
+        with:
+          script: |
+            const { issue } = context;
+            github.rest.issues.createComment({
+              issue_number: issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: "Thanks for raising this issue! We'll take a look at it soon."
+            });
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for authentication 
