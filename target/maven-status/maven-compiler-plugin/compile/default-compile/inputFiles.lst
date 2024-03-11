@@ -1,0 +1,9 @@
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/JpademoApplication.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/service/StudentService.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/controller/StudentController.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/exception/GlobalExceptionHandler.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/repository/StudentRepository.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/exception/StudentException.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/entity/Student.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/repository/CourseRepository.java
+/Users/Destroy/Documents/GitHub/WebTest-Private/src/main/java/ada/edu/demo/webtest/entity/Course.java
