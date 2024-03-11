@@ -24,8 +24,8 @@ jobs:
       - name: Build and Test with Maven
         run: mvn -B package --file pom.xml  # Build and run tests
 
-      # Optional: Code Coverage and Report Upload
-      - name: Generate code coverage report
-        run: mvn -B jacoco:prepare-agent install jacoco:report
-      - name: Upload coverage to Codecov
-        uses: codecov/codecov-action@v3
+      # # Optional: Code Coverage and Report Upload
+      # - name: Generate code coverage report
+      #   run: mvn -B jacoco:prepare-agent install jacoco:report
+      # - name: Upload coverage to Codecov
+      #   uses: codecov/codecov-action@v3
