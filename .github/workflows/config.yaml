@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-java@v4.1.0
         with:
           java-version: '17'  # Change Java version if required
-          # distribution: 'temurin'  # Optional: Use Temurin JDK
+          distribution: 'temurin'  # Optional: Use Temurin JDK
           cache: 'maven'          # Cache Maven dependencies for faster builds
 
       - name: Build and Test with Maven
