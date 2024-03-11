@@ -13,7 +13,7 @@ jobs:
 
     steps:
       - name: Add comment to issue
-        uses: actions/github-script@v6
+        uses: actions/github-script@v7
         with:
           script: |
             const { issue } = context;
@@ -21,8 +21,7 @@ jobs:
               issue_number: issue.number,
               owner: context.repo.owner,
               repo: context.repo.repo,
-              body: ' ¯\\_(ツ)_/¯ #whocares
-              Thanks for raising this issue! Developer(s) will take a look at it soon (• ◡ • )'
+              body: `Thanks for raising this issue! Developer(s) will take a look at it soon (• ◡ • )`
             });
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # Required for authentication 
