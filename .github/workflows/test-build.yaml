@@ -3,9 +3,9 @@ name: Build and Test (Maven) Spring Boot Project
 # When the workflow should be triggered
 on:
   push:
-    branches: [ main, develop ]   # Trigger on pushes to main and develop branches
+    branches: [ main ]   # Trigger on pushes to main branches
   pull_request:
-    branches: [ main, develop ]   # Trigger on pull requests to main and develop branches
+    branches: [ main ]   # Trigger on pull requests to main branches
 
 jobs:
   build-and-test:
@@ -22,4 +22,5 @@ jobs:
       #     cache: 'maven'          # Cache Maven dependencies for faster builds
 
       - name: Build and Test with Maven
-        run: mvn -B package --file pom.xml  # Build and run tests
+        # run: mvn -B package --file pom.xml  # Build and run tests
+        run: mvn test
