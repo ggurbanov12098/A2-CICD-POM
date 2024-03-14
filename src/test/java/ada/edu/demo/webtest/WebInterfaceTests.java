@@ -7,9 +7,7 @@ import org.openqa.selenium.WebElement;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.web.server.LocalServerPort;
-
 import java.util.List;
-
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
@@ -18,12 +16,6 @@ class WebInterfaceTests {
 
 	@Autowired
 	private WebDriver webDriver;
-
-	// @BeforeAll // Or @BeforeEach if you need this before each test
-    // public void setupWebDriver() {
-    //     System.setProperty("webdriver.chrome.driver", "/Applications/Google Chrome.app");	 // Replace with the actual path to chromedriver
-    //     webDriver = new ChromeDriver();
-    // }
 
 	@LocalServerPort
 	private int port;
@@ -72,7 +64,7 @@ class WebInterfaceTests {
 		System.out.println("Element result"+bodyElementLName);
 
 		try {
-			Thread.sleep(1000);
+			Thread.sleep(2000);
 		} catch (InterruptedException e) {
 			throw new RuntimeException(e);
 		}
@@ -83,38 +75,60 @@ class WebInterfaceTests {
 	}
 
 
-// ///////////////////////// Experimental Zone /////////////////////////
-
-
-	// @Test
-	// @Order(3)
-	// @DisplayName("update User Credentials")
-	// // public void test() {
-	// // 	// Check if the student is added
-	// // 	webDriver.get("http://localhost:"+port+"/student/list");
-	// // 	List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gabil')]"));
-	// // 	List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Gurbanov')]"));
-	// // 	System.out.println("Element result"+bodyElementLName);
-	// // 	try {
-	// // 		Thread.sleep(1000);
-	// // 	} catch (InterruptedException e) {
-	// // 		throw new RuntimeException(e);
-	// // 	}
-	// // 	assert(bodyElementFName.size() == 1);
-	// // 	assert(bodyElementLName.size() == 1);
-	// // }
-
-
-
-
-	// public void updateUser(){
-	// 	webDriver.get("http://localhost:"+port+"/student/");
-	// 	// Find and submit the form (assuming there's a submit button with a specific attribute)
+	@Test
+	@Order(3)
+	@DisplayName("set course to student")
+	public void ChangeNameSurname(){
+		webDriver.get("http://localhost:"+port+"/student/list");
+		webDriver.get("http://localhost:"+port+"/student/update?id=12098");
 		
-	// 	WebElement inputField = webDriver.findElement(By.name("id"));
-	// 	inputField.sendKeys("12098");
+		WebElement firstNameInput = webDriver.findElement(By.id("firstName"));
+		WebElement lastNameInput = webDriver.findElement(By.id("lastName"));
 		
-	// 	WebElement searchButton = webDriver.findElement(By.id("submit"));
-	// 	searchButton.click();
-	// }
+		// Check if such a field exists
+		assertNotNull(firstNameInput);
+		assertNotNull(lastNameInput);
+		
+		firstNameInput = webDriver.findElement(By.id("firstName"));
+		firstNameInput.clear();
+
+		lastNameInput = webDriver.findElement(By.id("lastName"));
+		lastNameInput.clear();
+
+		
+		try {
+			firstNameInput.sendKeys("Farid");
+			Thread.sleep(1000);
+			lastNameInput.sendKeys("Mammadli");
+			Thread.sleep(1000);	
+		} catch (Exception ex) {
+			System.out.println(ex);
+		}
+
+		// Find and submit the form (assuming there's a submit button with a specific attribute)
+		WebElement submitButton = webDriver.findElement(By.id("submit"));
+		submitButton.click();
+	}
+
+	@Test
+	@Order(4)
+	@DisplayName("Check the created user")
+	public void CheckNameSurname() {
+		// Check if the student is added
+		webDriver.get("http://localhost:"+port+"/student/list");
+		List<WebElement> bodyElementFName = webDriver.findElements(By.xpath("//*[contains(text(), 'Farid')]"));
+		List<WebElement> bodyElementLName = webDriver.findElements(By.xpath("//*[contains(text(), 'Mammadli')]"));
+		System.out.println("Element result"+bodyElementLName);
+
+
+		try {
+			Thread.sleep(1000);
+		} catch (InterruptedException e) {
+			throw new RuntimeException(e);
+		}
+
+		// Check if the text "Farid" is present in the page content
+		assert(bodyElementFName.size() == 1);
+		assert(bodyElementLName.size() == 1);
+	}
 }

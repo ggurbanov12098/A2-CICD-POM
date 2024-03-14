@@ -24,6 +24,7 @@ public class SeleniumConfig {
         options.addArguments("--disable-gpu"); // Sometimes important
 
 
+
         // WebDriverManager.firefoxdriver().setup();
         // return new FirefoxDriver(options);
         // return new FirefoxDriver();

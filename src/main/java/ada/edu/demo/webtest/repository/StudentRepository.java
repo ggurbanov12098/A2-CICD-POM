@@ -19,5 +19,3 @@ public interface StudentRepository extends CrudRepository<Student,Integer> {
     List<Student> findByNameCase(String name);
 
 }
-
-

@@ -9,25 +9,6 @@ import org.springframework.web.servlet.ModelAndView;
 @ControllerAdvice
 public class GlobalExceptionHandler {
 
-
-    // @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
-    // @ExceptionHandler(Exception.class)
-    // public ModelAndView handle400Errors(Exception ex) {
-    //     ModelAndView mv = new ModelAndView();
-    //     mv.setViewName("/errorpages/error_general");
-    //     mv.addObject("exception", ex.getMessage());
-    //     return mv;
-    // }
-
-
-    // @ExceptionHandler(StudentException.class)
-    // public ModelAndView handle500Errors(Exception ex) {
-    //     ModelAndView mv = new ModelAndView();
-    //     mv.setViewName("/errorpages/error_student");
-    //     mv.addObject("exception", ex.getMessage());
-    //     return mv;
-    // }
-
     @ResponseStatus(HttpStatus.METHOD_NOT_ALLOWED)
     @ExceptionHandler(Exception.class)
     public ModelAndView handle400Errors(Exception ex) {
