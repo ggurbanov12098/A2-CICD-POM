@@ -1,5 +1,7 @@
 ## Student Management System - Web UI Automation and CI/CD
 
+**Assignment Repo:** https://github.com/ADA-GWU/2024-a2-cicd-ggurbanov12098
+
 **Purpose:** 
 *  This web application streamlines student record management for educational institutions. It simplifies adding, modifying, and searching for student data, manages course enrollments, and provides features to filter students based on their activity status.
 
